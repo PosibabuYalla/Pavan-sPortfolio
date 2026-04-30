@@ -4,8 +4,8 @@ import { RadarChart, Radar, PolarGrid, PolarAngleAxis, ResponsiveContainer } fro
 import GlassContainer from './GlassContainer'
 
 const radarData = [
-  { subject: 'NLP', A: 90 },
-  { subject: 'Vision', A: 80 },
+  { subject: 'NLP', A: 87 },
+  { subject: 'Vision', A: 82 },
   { subject: 'RAG', A: 92 },
   { subject: 'LLMs', A: 95 },
   { subject: 'Data Sci', A: 88 },
@@ -16,31 +16,84 @@ const categories = [
   {
     title: 'Programming',
     color: 'var(--neural-teal)',
-    skills: [{ name: 'Python', pct: 95 }, { name: 'SQL', pct: 85 }, { name: 'JavaScript', pct: 70 }],
+    skills: [{ name: 'Python', pct: 95 }, { name: 'SQL', pct: 85 }],
   },
   {
     title: 'AI & LLM',
     color: 'var(--logic-violet)',
-    skills: [{ name: 'RAG Systems', pct: 92 }, { name: 'Prompt Engineering', pct: 90 }, { name: 'Embeddings', pct: 88 }, { name: 'Fine-Tuning', pct: 82 }],
+    skills: [
+      { name: 'Generative AI', pct: 92 },
+      { name: 'LLMs', pct: 95 },
+      { name: 'RAG', pct: 92 },
+      { name: 'Prompt Engineering', pct: 90 },
+      { name: 'Embeddings', pct: 88 },
+    ],
   },
   {
-    title: 'ML / Deep Learning',
+    title: 'Machine Learning',
     color: 'var(--kinetic-orange)',
-    skills: [{ name: 'CNN', pct: 85 }, { name: 'YOLO', pct: 80 }, { name: 'Transformers', pct: 88 }, { name: 'RNNs', pct: 78 }],
+    skills: [
+      { name: 'Classification', pct: 88 },
+      { name: 'Regression', pct: 85 },
+      { name: 'Feature Engineering', pct: 87 },
+      { name: 'Model Evaluation', pct: 88 },
+    ],
   },
   {
-    title: 'Tools & Frameworks',
+    title: 'Deep Learning & CV',
     color: 'var(--neural-teal)',
-    skills: [{ name: 'LangChain', pct: 90 }, { name: 'HuggingFace', pct: 88 }, { name: 'TensorFlow', pct: 82 }, { name: 'PyTorch', pct: 85 }],
+    skills: [
+      { name: 'CNN', pct: 85 },
+      { name: 'YOLO', pct: 80 },
+      { name: 'Computer Vision', pct: 82 },
+    ],
+  },
+  {
+    title: 'NLP',
+    color: 'var(--logic-violet)',
+    skills: [
+      { name: 'Text Processing', pct: 87 },
+      { name: 'Semantic Search', pct: 85 },
+    ],
+  },
+  {
+    title: 'Frameworks',
+    color: 'var(--kinetic-orange)',
+    skills: [
+      { name: 'LangChain', pct: 90 },
+      { name: 'HuggingFace', pct: 88 },
+      { name: 'Scikit-learn', pct: 86 },
+      { name: 'TensorFlow', pct: 82 },
+      { name: 'PyTorch', pct: 85 },
+    ],
+  },
+  {
+    title: 'Data Analysis',
+    color: 'var(--neural-teal)',
+    skills: [
+      { name: 'EDA', pct: 88 },
+      { name: 'Data Cleaning', pct: 87 },
+      { name: 'Visualization', pct: 85 },
+    ],
+  },
+  {
+    title: 'Tools & Databases',
+    color: 'var(--logic-violet)',
+    skills: [
+      { name: 'Git / GitHub', pct: 88 },
+      { name: 'Jupyter Notebook', pct: 90 },
+      { name: 'MySQL', pct: 82 },
+      { name: 'Vector Databases', pct: 85 },
+    ],
   },
 ]
 
 function MiniBar({ name, pct, color, inView }) {
   return (
-    <div className="mb-3">
-      <div className="flex justify-between mb-1">
-        <span className="font-mono text-xs text-[var(--text-dim)]">{name}</span>
-        <span className="font-mono text-xs" style={{ color }}>{pct}%</span>
+    <div className="mb-2">
+      <div className="flex justify-between mb-0.5">
+        <span className="font-mono text-[11px] text-[var(--text-dim)]">{name}</span>
+        <span className="font-mono text-[11px]" style={{ color }}>{pct}%</span>
       </div>
       <div className="h-1 rounded-full bg-white/5 overflow-hidden">
         <motion.div
@@ -60,33 +113,33 @@ export default function SkillsSection() {
   const inView = useInView(ref, { once: true })
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-8" ref={ref}>
-      <div className="mb-6">
-        <span className="font-mono text-[11px] tracking-widest uppercase text-[var(--logic-violet)]">
+    <div className="max-w-7xl mx-auto w-full px-6 py-4" ref={ref}>
+      <div className="mb-4">
+        <span className="font-mono text-[10px] tracking-widest uppercase text-[var(--logic-violet)]">
           Module: Capabilities
         </span>
-        <h2 className="text-3xl md:text-4xl font-extrabold mt-2">
+        <h2 className="text-2xl font-extrabold mt-1">
           Skills & <span className="gradient-text">Expertise</span>
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
         {/* Radar chart */}
-        <GlassContainer meta="Skill Radar" accentColor="var(--neural-teal)" delay={0}>
-          <ResponsiveContainer width="100%" height={280}>
+        <GlassContainer meta="Skill Radar" accentColor="var(--neural-teal)" delay={0} className="lg:col-span-1">
+          <ResponsiveContainer width="100%" height={220}>
             <RadarChart data={radarData}>
               <PolarGrid stroke="rgba(255,255,255,0.08)" />
               <PolarAngleAxis dataKey="subject"
-                tick={{ fill: 'var(--text-dim)', fontSize: 11, fontFamily: 'JetBrains Mono' }} />
+                tick={{ fill: 'var(--text-dim)', fontSize: 10, fontFamily: 'JetBrains Mono' }} />
               <Radar dataKey="A" stroke="#2DD4BF" fill="#2DD4BF" fillOpacity={0.15} strokeWidth={2} />
             </RadarChart>
           </ResponsiveContainer>
         </GlassContainer>
 
-        {/* Skill categories 2x2 */}
-        <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* All skill categories — responsive grid */}
+        <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {categories.map((cat, i) => (
-            <GlassContainer key={cat.title} meta={cat.title} accentColor={cat.color} delay={i * 0.1}>
+            <GlassContainer key={cat.title} meta={cat.title} accentColor={cat.color} delay={i * 0.07}>
               {cat.skills.map(s => (
                 <MiniBar key={s.name} name={s.name} pct={s.pct} color={cat.color} inView={inView} />
               ))}
@@ -94,6 +147,6 @@ export default function SkillsSection() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   )
 }
