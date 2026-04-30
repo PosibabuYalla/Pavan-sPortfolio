@@ -66,7 +66,7 @@ function ProjectCard({ project, delay }) {
   const handleLeave = () => { clearInterval(intervalRef.current); setLogIdx(0) }
 
   return (
-    <GlassContainer delay={delay} className="flex flex-col glass-hover cursor-default h-full">
+    <GlassContainer delay={delay} className="flex flex-col glass-hover cursor-default">
       <div onMouseEnter={handleEnter} onMouseLeave={handleLeave} className="flex flex-col flex-1">
         <div className="flex items-start justify-between mb-2">
           <div>
@@ -130,12 +130,12 @@ function ProjectCard({ project, delay }) {
 
 export default function ProjectsSection() {
   return (
-    <div className="h-full flex flex-col max-w-7xl mx-auto w-full px-6 py-4">
+    <div className="max-w-7xl mx-auto w-full px-6 py-4 lg:h-full lg:flex lg:flex-col">
       <div className="mb-3">
         <span className="font-mono text-[10px] tracking-widest uppercase text-[var(--kinetic-orange)]">Module: Projects</span>
         <h2 className="text-2xl font-extrabold mt-1">Featured <span className="gradient-text">Work</span></h2>
       </div>
-      <div className="grid grid-cols-3 gap-3 flex-1 min-h-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:flex-1 lg:min-h-0">
         {projects.map((p, i) => <ProjectCard key={p.title} project={p} delay={i * 0.1} />)}
       </div>
     </div>
