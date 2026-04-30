@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --midnight: #020617;
+  --deep-slate: #0F172A;
+  --neural-teal: #2DD4BF;
+  --logic-violet: #A855F7;
+  --kinetic-orange: #F97316;
+  --text-main: #F8FAFC;
+  --text-dim: #94A3B8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: var(--midnight);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+
+/* Dot grid background */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(45,212,191,0.3) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Glass panel */
+.glass {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.glass-hover:hover {
+  border-color: rgba(45,212,191,0.4);
+  box-shadow: 0 0 20px rgba(45,212,191,0.15);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--neural-teal), var(--logic-violet), var(--kinetic-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effects */
+.glow-teal { box-shadow: 0 0 20px rgba(45,212,191,0.3); }
+.glow-violet { box-shadow: 0 0 20px rgba(168,85,247,0.3); }
+.glow-orange { box-shadow: 0 0 20px rgba(249,115,22,0.3); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--midnight); }
+::-webkit-scrollbar-thumb { background: var(--neural-teal); border-radius: 2px; }
+
+/* Ticker animation */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-track { animation: ticker 30s linear infinite; }
+
+/* Pulse dot */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.4); }
+}
+.pulse-dot { animation: pulse-dot 1.5s ease-in-out infinite; }
