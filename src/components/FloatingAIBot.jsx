@@ -52,7 +52,7 @@ const KB = {
     },
     {
       name: 'AI-Based Number Plate Detection', type: 'Computer Vision',
-      stack: 'YOLO, EasyOCR, OpenCV, Python, Flask', accuracy: '97.1%',
+      stack: 'YOLO, EasyOCR, OpenCV, Python, Flask', accuracy: '85%',
       desc: 'Built a system for license plate detection and recognition using YOLO and EasyOCR with super-resolution enhancement and preprocessing pipelines.',
     },
   ],

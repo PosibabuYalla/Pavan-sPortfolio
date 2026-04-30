@@ -4,7 +4,7 @@ import GlassContainer from './GlassContainer'
 import AnimatedCounter from './AnimatedCounter'
 
 const stats = [
-  { label: 'Projects Completed', value: 15, suffix: '+' },
+  { label: 'Projects Completed', value: 7, suffix: '' },
   { label: 'Technologies Used', value: 25, suffix: '+' },
   { label: 'Models Built', value: 10, suffix: '+' },
 ]
@@ -20,7 +20,7 @@ const skills = [
 
 const timeline = [
   { year: '2021', text: 'Started B.Tech in AI & Data Science at KIET', color: 'var(--neural-teal)' },
-  { year: '2023', text: 'ML Intern — Feynn Labs: EV market segmentation & clustering', color: 'var(--logic-violet)' },
+  { year: '2024', text: 'ML Intern — Feynn Labs: EV market segmentation & clustering', color: 'var(--logic-violet)' },
   { year: '2024', text: 'AI Developer Intern — Code Crafters: LLM workflows & RAG systems', color: 'var(--kinetic-orange)' },
   { year: '2025', text: 'Building Advanced RAG & Multi-Agent AI Systems', color: 'var(--neural-teal)' },
 ]

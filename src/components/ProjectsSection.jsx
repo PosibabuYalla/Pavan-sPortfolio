@@ -38,7 +38,7 @@ const projects = [
     subtitle: 'Computer Vision + Super Resolution',
     stack: ['YOLO', 'OpenCV', 'Tesseract OCR', 'Flask'],
     color: 'var(--kinetic-orange)',
-    metrics: [{ label: 'Accuracy', value: '97.1%' }, { label: 'FPS', value: '22' }, { label: 'Plates', value: '1000+' }],
+    metrics: [{ label: 'Accuracy', value: '85%' }, { label: 'FPS', value: '22' }, { label: 'Plates', value: '1000+' }],
     live: 'https://ai-based-number-plate-detection-with-njnw.onrender.com',
     logs: [
       '> Loading YOLO model weights...',

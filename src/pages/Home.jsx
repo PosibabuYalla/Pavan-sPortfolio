@@ -17,7 +17,7 @@ const sectionPreviews = [
     accent: 'var(--neural-teal)',
     icon: <FaUserAstronaut size={18} />,
     preview: [
-      { stat: '15+', label: 'Projects' },
+      { stat: '7', label: 'Projects' },
       { stat: '25+', label: 'Technologies' },
       { stat: '10+', label: 'Models Built' },
     ],
@@ -44,7 +44,7 @@ const sectionPreviews = [
     icon: <FaRocket size={18} />,
     preview: [
       { stat: '94.2%', label: 'RAG Accuracy' },
-      { stat: '97.1%', label: 'CV Accuracy' },
+      { stat: '85%', label: 'CV Accuracy' },
       { stat: '91.5%', label: 'SQL Accuracy' },
     ],
     desc: 'Multi-Agent RAG · Text-to-SQL · Number Plate Detection',
