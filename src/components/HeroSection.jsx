@@ -46,7 +46,7 @@ export default function HeroSection() {
             style={{ background: 'var(--neural-teal)', color: 'var(--midnight)' }}>
             View Projects
           </Link>
-          <a href="#" onClick={(e) => e.preventDefault()}
+          <a href="/Ayithireddy_pavan.pdf" download="Ayithireddy_pavan.pdf"
             className="px-6 py-2.5 rounded-full font-semibold text-sm border transition-all duration-300 hover:scale-105"
             style={{ borderColor: 'var(--logic-violet)', color: 'var(--logic-violet)' }}>
             Download Resume
